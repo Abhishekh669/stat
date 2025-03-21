@@ -6,7 +6,6 @@ const AnimatedCounter = ({ num , prefix, label }: { num: number, prefix ?: strin
   return (
     <div className="w-full h-16  text-primary font-bold text-3xl">
       <CountUp 
-        decimals={2}
         decimal=","
         prefix={prefix || ""}
         suffix='+'
