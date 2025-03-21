@@ -18,7 +18,7 @@ function BlogPage() {
           Page Under Maintenance
         </h1>
         <p className="text-gray-600 mb-6">
-          We're currently working on improving this page. Please check back later!
+          We&apos;re currently working on improving this page. Please check back later!
         </p>
         <a
           href="/"
