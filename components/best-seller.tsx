@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 interface BestSellerProps {
   productsInView: boolean;
   productsRef: any;
@@ -84,10 +85,11 @@ function BestSeller({
             >
               <Card className="overflow-hidden transition-all hover:shadow-lg group h-full bg-offwhite-rose">
                 <div className="aspect-square relative">
-                  <img
+                  <Image
                     src={product.image || "/placeholder.svg"}
                     alt={product.name}
                     className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                    fill
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <Button

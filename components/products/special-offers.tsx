@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { dummyProducts } from "@/lib/data"
+import Image from "next/image"
 
 export const SpecialOffersSection = () => {
   const saleProducts = dummyProducts.filter((product) => product.onSale && product.originalPrice).slice(0, 4) // Limit to 4 products
@@ -32,10 +33,11 @@ export const SpecialOffersSection = () => {
                 <div className="relative">
                   <Badge className="absolute top-2 left-2 z-10 bg-red-500">{discountPercentage}% OFF</Badge>
                   <div className="aspect-square overflow-hidden">
-                    <img
+                    <Image
                       src={product.imageUrl || "/placeholder.svg"}
                       alt={product.name}
                       className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                      fill
                     />
                   </div>
                 </div>

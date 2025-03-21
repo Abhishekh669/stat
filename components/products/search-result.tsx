@@ -32,7 +32,7 @@ export const SearchResultsInfo = ({
         <div>
           <p className="text-sm">
             Found <span className="font-medium">{resultsCount}</span> results for
-            <span className="font-medium"> "{searchQuery}"</span> {searchFieldsText}
+            <span className="font-medium"> &quot;{searchQuery}&quot;</span> {searchFieldsText}
           </p>
         </div>
         <button onClick={clearSearch} className="text-sm text-primary hover:underline">

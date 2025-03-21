@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from './ui/button'
 import { motion } from "framer-motion";
 import { Card, CardContent } from './ui/card';
+import Image from 'next/image';
 
 function RecentlyViewed() {
   const mostViewed = [
@@ -43,10 +44,11 @@ function RecentlyViewed() {
           >
             <Card className="overflow-hidden group bg-offwhite-rose">
               <div className="aspect-square relative">
-                <img
+                <Image
                   src={`${item.path}`}
                   alt={`Recently viewed product ${item.title}`}
                   className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                  fill
                 />
               </div>
               <CardContent className="p-3">

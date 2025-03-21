@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Heart, Star } from "lucide-react"
 import { ProductData } from "@/types/type"
 import { highlightSearchTerm } from "@/lib/search-utlils"
+import Image from "next/image"
 
 interface ProductGridProps {
   products: ProductData[]
@@ -22,10 +23,11 @@ export const ProductGrid = ({ products, viewMode, searchTerm = "" }: ProductGrid
       {products.map((product) => (
         <Card key={product.id} className="overflow-hidden transition-all hover:shadow-lg group">
           <div className={`${viewMode === "grid" ? "aspect-square" : "h-48 md:h-64"} relative`}>
-            <img
+            <Image
               src={product.imageUrl || "/placeholder.svg"}
               alt={product.name}
               className="object-cover w-full h-full transition-transform group-hover:scale-105"
+              fill
             />
             {product.isNew && (
               <span className="absolute top-2 left-2 bg-primary text-white text-xs px-2 py-1 rounded">New</span>

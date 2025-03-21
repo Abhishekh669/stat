@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Box, Minus, Plus, Shield, X } from "lucide-react"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 interface ProductQuickViewProps {
   open: boolean
@@ -60,10 +61,11 @@ export function ProductQuickView({ open, onOpenChange, product }: ProductQuickVi
                 transition={{ duration: 0.3 }}
                 className="h-[300px] md:h-[400px]"
               >
-                <img
+                <Image
                   src={productImages[selectedImage] || "/placeholder.svg"}
                   alt={product.name}
                   className="object-cover w-full h-full"
+                  fill
                 />
               </motion.div>
             </AnimatePresence>

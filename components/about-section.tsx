@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 function AboutSection() {
   return (
@@ -17,10 +18,11 @@ function AboutSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <img
-              src="/placeholder.svg?height=400&width=600"
+            <Image
+              src="/images/products/storypic.webp"
               alt="Writefully Yours store in Sydney"
               className="object-cover w-full h-full rounded-lg shadow-lg"
+              fill
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-lg"></div>
 
