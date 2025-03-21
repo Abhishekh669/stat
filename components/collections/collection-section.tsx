@@ -15,15 +15,15 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { dummyProducts } from "@/lib/data";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export const CollectionSectionPage = () => {
-  // Get unique categories
+  const router = useRouter();
   const categories = Array.from(
     new Set(dummyProducts.map((product) => product.category))
   );
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Filter categories based on search
   const filteredCategories = searchQuery
     ? categories.filter((category) =>
         category.toLowerCase().includes(searchQuery.toLowerCase())
@@ -208,6 +208,7 @@ export const CollectionSectionPage = () => {
           <Button
             size="lg"
             className="group relative overflow-hidden bg-[#2377c4] hover:bg-cyan-400"
+            onClick={()=>router.push("/about-us")}
           >
             <span className="relative z-10 ">Learn more</span>
           </Button>
