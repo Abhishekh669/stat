@@ -6,6 +6,8 @@ import { Heart, Star } from "lucide-react"
 import { ProductData } from "@/types/type"
 import { highlightSearchTerm } from "@/lib/search-utlils"
 import Image from "next/image"
+import { useState } from "react"
+import { ProductQuickView } from "./product-quick"
 
 interface ProductGridProps {
   products: ProductData[]
@@ -14,14 +16,24 @@ interface ProductGridProps {
 }
 
 export const ProductGrid = ({ products, viewMode, searchTerm = "" }: ProductGridProps) => {
+  const [openProduct, setOpenProduct] = useState(false)
   return (
-    <div
+   <>
+   {
+    
+   }
+     <div
       className={`grid ${
         viewMode === "grid" ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" : "grid-cols-1"
       } gap-6`}
     >
       {products.map((product) => (
         <Card key={product.id} className="overflow-hidden transition-all hover:shadow-lg group">
+          {
+            product && openProduct && (
+              <ProductQuickView open={openProduct} onOpenChange={setOpenProduct} product={product} />
+            )
+          }
           <div className={`${viewMode === "grid" ? "aspect-square" : "h-48 md:h-64"} relative`}>
             <Image
               src={product.imageUrl || "/placeholder.svg"}
@@ -36,7 +48,7 @@ export const ProductGrid = ({ products, viewMode, searchTerm = "" }: ProductGrid
               <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">Sale</span>
             )}
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <Button variant="secondary" size="sm" className="mx-1">
+              <Button variant="secondary" size="sm" className="mx-1" onClick={()=> setOpenProduct(true)}>
                 Quick View
               </Button>
               <Button variant="secondary" size="sm" className="mx-1">
@@ -87,6 +99,7 @@ export const ProductGrid = ({ products, viewMode, searchTerm = "" }: ProductGrid
         </Card>
       ))}
     </div>
+   </>
   )
 }
 

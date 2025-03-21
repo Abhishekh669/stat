@@ -13,10 +13,21 @@ interface ProductQuickViewProps {
   product: {
     id: number
     name: string
-    price: string
     description: string
-    image: string
+    price: number
+    originalPrice?: number
     category: string
+    brand ?: string
+    color ?: string
+    imageUrl: string
+    rating ?: number
+    reviewCount ?: number
+    stockCount ?: number
+    shippingDays ?: number
+    featured ?: boolean
+    isNew ?: boolean
+    onSale ?: boolean
+    dateAdded ?: string
   }
 }
 
@@ -35,7 +46,7 @@ export function ProductQuickView({ open, onOpenChange, product }: ProductQuickVi
 
   // Mock multiple product images
   const productImages = [
-    product.image,
+    product.imageUrl,
     "/placeholder.svg?height=300&width=300&text=View 2",
     "/placeholder.svg?height=300&width=300&text=View 3",
   ]

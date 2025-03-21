@@ -15,7 +15,7 @@ import { ActiveFilters } from "./active-filter"
 import { SpecialOffersSection } from "./special-offers"
 
 export const ProductListPage = () => {
-  const [products, setProducts] = useState<ProductData[]>(dummyProducts)
+
   const [filteredProducts, setFilteredProducts] = useState<ProductData[]>(dummyProducts)
   const [currentPage, setCurrentPage] = useState(1)
   const [showFilterPanel, setShowFilterPanel] = useState(false)
