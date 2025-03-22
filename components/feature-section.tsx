@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 import Image from "next/image"
+import { categories } from "@/lib/data"
 
 interface FeatureSectionProps {
   categoriesRef: LegacyRef<HTMLDivElement> | undefined
@@ -13,28 +14,7 @@ interface FeatureSectionProps {
 }
 
 function FeatureSection({ categoriesInView, categoriesRef }: FeatureSectionProps) {
-  const categories = [
-    {
-      name: "Notebooks",
-      image: "/images/notebook.png",
-      color: "bg-blue-500/10",
-    },
-    {
-      name: "Pens & Pencils",
-      image: "/images/pen-n-pencils.jpg",
-      color: "bg-green-500/10",
-    },
-    {
-      name: "Office Accessories",
-      image: "/images/office-items.webp",
-      color: "bg-amber-500/10",
-    },
-    {
-      name: "Planners",
-      image: "/images/products/sticky-note2.jpeg",
-      color: "bg-purple-500/10",
-    },
-  ]
+
 
   return (
     <section className="py-16 bg-offwhite-subtle relative overflow-hidden">
@@ -47,8 +27,7 @@ function FeatureSection({ categoriesInView, categoriesRef }: FeatureSectionProps
         >
           <h2 className="text-3xl font-serif font-bold text-center mb-4">Explore Our Collections</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
-            Discover our carefully curated selection of premium stationery products designed to inspire creativity and
-            enhance productivity.
+            Discover our best products with best affordable price
           </p>
         </motion.div>
 
@@ -75,7 +54,7 @@ function FeatureSection({ categoriesInView, categoriesRef }: FeatureSectionProps
                     href={"/collections"}
                     className="text-primary-foreground text-sm flex items-center mt-2 group-hover:text-primary"
                   >
-                    Shop Now{" "}
+                    Shop Now
                     <ChevronRight className="ml-1 h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </CardContent>

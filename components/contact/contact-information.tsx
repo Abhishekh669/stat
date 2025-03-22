@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardContent } from '../ui/card'
 import { Mail, MapPin, Phone } from 'lucide-react'
+import Link from 'next/link'
 
 function ContactInformation() {
   return (
@@ -10,9 +11,7 @@ function ContactInformation() {
         Get in Touch
       </h2>
       <p className="text-muted-foreground mb-8">
-        To stay connected, Whether you have a question about
-        our products, need help with an order,
-        our team is here to assist you.
+        To stay connected, Please provide your information by submitting the form.
       </p>
     </div>
 
@@ -24,9 +23,9 @@ function ContactInformation() {
             <div>
               <h3 className="font-medium mb-2">Visit Our Store</h3>
               <p className="text-sm text-muted-foreground">
-                123 George Street
-                <br />
-                Sydney, NSW 2000
+               
+               
+                Sydney  
                 <br />
                 Australia
               </p>
@@ -41,12 +40,16 @@ function ContactInformation() {
             <Phone className="h-6 w-6 text-primary mr-4 mt-1" />
             <div>
               <h3 className="font-medium mb-2">Call Us</h3>
-              <p className="text-sm text-muted-foreground">
-                +61 2 1234 5678
-                <br />
+              <p className="text-sm text-muted-foreground flex flex-col gap-x-1 gap-y-1">
+                <span>+61 2 1234 5678</span>
+                <span>
+
                 Monday - Friday: 9am - 5pm
-                <br />
+                </span>
+                <span>
+
                 Saturday: 10am - 4pm
+                </span>
               </p>
             </div>
           </div>
@@ -59,15 +62,22 @@ function ContactInformation() {
             <Mail className="h-6 w-6 text-primary mr-4 mt-1" />
             <div>
               <h3 className="font-medium mb-2">Email Us</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground flex  flex-col gap-x-1 gap-y-1">
+                <span>
+
                 General Inquiries:
-                <br />
+                </span>
+                <span>
                 info@writefullyyours.com
-                <br />
-                <br />
+                </span>
+                <span>
                 Customer Support:
-                <br />
+                </span>
+                <span>
+
+             
                 support@writefullyyours.com
+                </span>
               </p>
             </div>
           </div>
@@ -87,28 +97,27 @@ function ContactInformation() {
             <div>
               <h3 className="font-medium mb-2">Follow Us</h3>
               <p className="text-sm text-muted-foreground">
-                Stay updated with our latest products, events, and
-                promotions by following us on social media.
+                Stay updated with our latest products, offers, and best product by following us on social media.
               </p>
               <div className="flex space-x-4 mt-3">
-                <a
+                <Link
                   href="#"
                   className="text-primary hover:text-primary/80"
                 >
                   Facebook
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="text-primary hover:text-primary/80"
                 >
                   Instagram
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="text-primary hover:text-primary/80"
                 >
                   Twitter
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,6 +1,31 @@
 import { ProductData } from "@/types/type";
 
 
+
+export const categories = [
+  {
+    name: "Notebooks",
+    image: "/images/notebook.png",
+    color: "bg-blue-500/10",
+  },
+  {
+    name: "Pens & Pencils",
+    image: "/images/pen-n-pencils.jpg",
+    color: "bg-green-500/10",
+  },
+  {
+    name: "Office Accessories",
+    image: "/images/office-items.webp",
+    color: "bg-amber-500/10",
+  },
+  {
+    name: "Planners",
+    image: "/images/products/sticky-note2.jpeg",
+    color: "bg-purple-500/10",
+  },
+]
+
+
 export const bestSeller : ProductData [] = [
   {
     id: 1,

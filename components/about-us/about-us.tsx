@@ -63,7 +63,7 @@ export default function AboutUsPage() {
               <div className="space-y-6">
                 <h2 className="text-3xl font-serif font-bold">Our Story</h2>
                 <p className="text-muted-foreground">
-                  Writefully Yours was born from a passion for beautiful stationery and the belief that the right tools
+                  Writefully Yours was eastiblished from a passion for beautiful stationery and the belief that the right tools
                   can inspire creativity and productivity. Founded in 2019 by Sydney-based designer John Doe.
                 </p>
                 <p className="text-muted-foreground">
@@ -73,9 +73,8 @@ export default function AboutUsPage() {
                  
                 </p>
                 <p className="text-muted-foreground">
-                  We believe that in our increasingly digital world, there&apos;s something special about putting pen to
-                  paper. Whether you&apos;re jotting down ideas, planning your week, or writing a heartfelt note, we&apos;re here
-                  to provide the perfect tools for your journey.
+                 Writefully Yours belivew that the power of pen and pencil can change the whole world. With the motive of that we aims to porvide the best and affordable price and product 
+                 for all the books lover.
                 </p>
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
@@ -145,8 +144,7 @@ export default function AboutUsPage() {
               <div className="space-y-6">
                 <h2 className="text-3xl font-serif font-bold">Visit Our Store</h2>
                 <p className="text-muted-foreground">
-                  Our flagship store in Sydney is designed to be a haven for stationery lovers. Browse our carefully
-                  curated collection, test pens at our writing station, or join one of our regular workshops and events.
+                  Our Company in Sydney is for stationery lovers. Browse Yours all the requirements according to your needs.
                 </p>
                 <div className="space-y-3">
                   <div>

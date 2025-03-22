@@ -1,17 +1,10 @@
 "use client";
 
 import type React from "react";
-
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { ChevronRight, Mail, MapPin, Phone, ShoppingBag } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { ChevronRight,  } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import AnimatedCounter from "@/components/ui/shared/animated-counter";
-import NavBar from "@/components/nav-bar/header";
-import Image from "next/image";
 import HeroSection from "@/components/hero-section";
 import StatSection from "@/components/stat-section";
 import FeatureSection from "@/components/feature-section";
@@ -79,6 +72,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden bg-slate-50">
+      {quickViewProduct && (
+        <ProductQuickView open={isQuickViewOpen} onOpenChange={setIsQuickViewOpen} product={quickViewProduct} />
+      )}
       <main className="flex-1">
         <HeroSection
           heroRef={heroRef}
@@ -105,10 +101,8 @@ export default function Home() {
         
       </main>
 
-      {/* Footer */}
       <Footer />
 
-      {/* Back to Top Button */}
       <motion.button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg z-50 hover:bg-primary/90 transition-colors"
@@ -122,9 +116,7 @@ export default function Home() {
         <ChevronRight className="-rotate-90"/>
       </motion.button>
 
-      {quickViewProduct && (
-        <ProductQuickView open={isQuickViewOpen} onOpenChange={setIsQuickViewOpen} product={quickViewProduct} />
-      )}
+      
     </div>
   );
 }

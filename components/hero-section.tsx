@@ -42,7 +42,7 @@ function HeroSection({
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-                Premium Stationery
+                Best Stationery
               </span>
               <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight">
                 Write and Create Your{" "}

@@ -78,7 +78,7 @@ export const CollectionSectionPage = () => {
             <div className="col-span-full text-center py-12">
               <h3 className="text-lg font-medium mb-2">No collections found</h3>
               <p className="text-muted-foreground mb-4">
-                Try adjusting your search criteria
+                Try something else
               </p>
               <Button onClick={() => setSearchQuery("")}>Clear Search</Button>
             </div>
@@ -90,7 +90,6 @@ export const CollectionSectionPage = () => {
               const productCount = dummyProducts.filter(
                 (product) => product.category === category
               ).length;
-              const categorySlug = category.toLowerCase().replace(/\s+/g, "-");
 
               return (
                 <div
@@ -119,7 +118,7 @@ export const CollectionSectionPage = () => {
                         every occasion.
                       </p>
                       <div className="mt-2 flex items-center text-primary text-sm font-medium group-hover:underline">
-                        Shop now{" "}
+                        Shop now
                         <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </div>
                     </CardContent>
@@ -193,8 +192,8 @@ export const CollectionSectionPage = () => {
             Can&apos;t find what you&apos;re looking for?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Our customer service team is here to help you find the perfect
-            product. Contact us with any questions or special requests.
+            Our customer service team is always ready to  help you find the perfect
+            product for you. Contact us with any questions or special requests.
           </p>
           <Button
             size="lg"
