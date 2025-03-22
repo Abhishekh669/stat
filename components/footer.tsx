@@ -66,7 +66,7 @@ function Footer() {
                 <Button
                 variant={"ghost"}
                   onClick={() => router.push(`/products`)}
-                  className="p-0 hover:text-white transition-colors duration-300 relative group"
+                  className="p-0 hover:text-white hover:bg-transparent transition-colors duration-300 relative group"
                 >
                   <span>{item}</span>
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
@@ -86,7 +86,7 @@ function Footer() {
                 <Button
                 variant={"ghost"}
                   onClick={() => router.push(`${item.url}`)}
-                  className="p-0 hover:text-white transition-colors duration-300 relative group"
+                  className="p-0 hover:text-white transition-colors hover:bg-transparent duration-300 relative group"
                 >
                   <span>{item.title}</span>
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
