@@ -8,23 +8,7 @@ import { useRouter } from "next/navigation"
 export default function AboutUsPage() {
   const router = useRouter()
 
-    const aboutMembers = [
-        {
-          name: "Emma Thompson",
-          role: "Founder & Creative Director",
-          bio: "With a background in graphic design and a lifelong love of stationery, Emma founded Writefully Yours to share her passion with others.",
-        },
-        {
-          name: "David Chen",
-          role: "Store Manager",
-          bio: "David ensures our store runs smoothly and that every customer leaves with exactly what they need.",
-        },
-        {
-          name: "Sarah Williams",
-          role: "Product Curator",
-          bio: "Sarah travels the world to discover unique and high-quality stationery products for our collection.",
-        },
-      ]
+    
     const aboutMe = [
         {
           icon: <Users className="h-10 w-10 text-primary" />,
@@ -45,7 +29,7 @@ export default function AboutUsPage() {
         {
           icon: <Award className="h-10 w-10 text-primary" />,
           title: "Community",
-          description: "We support local artists and foster a community of stationery enthusiasts.",
+          description: "We support local artists and boost the  community of stationery enthusiasts.",
         },
       ]
   return (
@@ -73,7 +57,7 @@ export default function AboutUsPage() {
                  
                 </p>
                 <p className="text-muted-foreground">
-                 Writefully Yours belivew that the power of pen and pencil can change the whole world. With the motive of that we aims to porvide the best and affordable price and product 
+                 Writefully Yours belive   the power of pen and pencil can change the whole world. With the motive of that we aims to provide the best and affordable price for all the products. 
                  for all the books lover.
                 </p>
               </div>
@@ -106,28 +90,7 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        <section className="py-16">
-          <div className="container px-4">
-            <h2 className="text-3xl font-serif font-bold text-center mb-12">Meet Our Team</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {aboutMembers.map((member, index) => (
-                <div key={index} className="text-center">
-                  <div className="relative h-[300px] w-[300px] mx-auto rounded-full overflow-hidden mb-6">
-                    <Image
-                    fill
-                      src={ "/images/products/member.webp"}
-                      alt={member.name}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <h3 className="text-xl font-medium">{member.name}</h3>
-                  <p className="text-primary font-medium mb-2">{member.role}</p>
-                  <p className="text-muted-foreground text-sm max-w-xs mx-auto">{member.bio}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        
 
       
         <section className="py-16 bg-gray-50">
