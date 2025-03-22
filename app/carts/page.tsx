@@ -38,7 +38,7 @@ export default function CartPage() {
   if (groupedProducts.length === 0) {
     return (
       <div className="w-full h-full min-h-screen flex flex-col justify-center items-center">
-        <span>No products added</span>
+        <span>No products added to  cart</span>
         <Link
           href="/products"
           className="bg-blue-400 p-2 rounded-lg hover:text-white"
