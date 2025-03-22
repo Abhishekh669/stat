@@ -101,9 +101,8 @@ export const CollectionSectionPage = () => {
               const categorySlug = category.toLowerCase().replace(/\s+/g, "-");
 
               return (
-                <Link
+                <div
                   key={category}
-                  href={`/collections/${categorySlug}`}
                   className="block"
                 >
                   <Card className="overflow-hidden group cursor-pointer h-full hover:shadow-lg transition-all duration-300">
@@ -133,7 +132,7 @@ export const CollectionSectionPage = () => {
                       </div>
                     </CardContent>
                   </Card>
-                </Link>
+                </div>
               );
             })
           )}
