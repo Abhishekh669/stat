@@ -67,8 +67,7 @@ export default function AboutUsPage() {
                   can inspire creativity and productivity. Founded in 2019 by Sydney-based designer John Doe.
                 </p>
                 <p className="text-muted-foreground">
-                  We delighted to provide you quality study materials for your better future. Writing and Learnig on your favourite study materials 
-                  makes study fun. As we consider you all are the bright light of the nation so we don&apos;t compromise towards your future.
+                  We  provide you quality study materials for your better future. As we consider you all are the bright light of the nation so we don&apos;t compromise towards your future.
                   Even we provide cheapest study materials which make reliable for middle-class students. We believe that providing eduaction weapon 
                   is fate to us.
                  
