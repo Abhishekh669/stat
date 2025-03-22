@@ -6,8 +6,14 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { dummyProducts } from "@/lib/data"
 import Image from "next/image"
+import { useStatStore } from "@/store/use-stat-store"
+import { ProductData } from "@/types/type"
 
 export const SpecialOffersSection = () => {
+  const {addToCart} = useStatStore()
+  const handleAddToCart = (product : ProductData) =>{
+    addToCart(product)
+  }
   const saleProducts = dummyProducts.filter((product) => product.onSale && product.originalPrice).slice(0, 4) // Limit to 4 products
   if (saleProducts.length === 0) return null
   return (
@@ -50,7 +56,7 @@ export const SpecialOffersSection = () => {
                       ${product.originalPrice?.toFixed(2)}
                     </span>
                   </div>
-                  <Button className="w-full mt-3">Add to Cart</Button>
+                  <Button className="w-full mt-3" onClick={() => handleAddToCart(product)}>Add to Cart</Button>
                 </CardContent>
               </Card>
             )

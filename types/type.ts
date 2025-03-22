@@ -16,6 +16,15 @@ export interface ProductData {
   isNew: boolean
   onSale: boolean
   dateAdded: string
+  reviews ?: reiviewType[]
+}
+
+interface reiviewType{
+  id : number,
+  userName : string,
+  rating : number,
+  comment : string,
+  date : string
 }
 
 export type SortOption = "featured" | "newest" | "priceAsc" | "priceDesc" | "rating"

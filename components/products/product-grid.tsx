@@ -1,6 +1,6 @@
 "use client"
 
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Heart, Star } from "lucide-react"
 import { ProductData } from "@/types/type"
@@ -8,6 +8,8 @@ import { highlightSearchTerm } from "@/lib/search-utlils"
 import Image from "next/image"
 import { useState } from "react"
 import { ProductQuickView } from "./product-quick"
+import { useRouter } from "next/navigation"
+import { useStatStore } from "@/store/use-stat-store"
 
 interface ProductGridProps {
   products: ProductData[]
@@ -16,7 +18,13 @@ interface ProductGridProps {
 }
 
 export const ProductGrid = ({ products, viewMode, searchTerm = "" }: ProductGridProps) => {
+  const {addToCart} = useStatStore()
   const [openProduct, setOpenProduct] = useState(false)
+  const router = useRouter();
+  const addProduct = (product : ProductData)=>{
+    addToCart(product)
+
+  }
   return (
    <>
    {
@@ -28,7 +36,7 @@ export const ProductGrid = ({ products, viewMode, searchTerm = "" }: ProductGrid
       } gap-6`}
     >
       {products.map((product) => (
-        <Card key={product.id} className="overflow-hidden transition-all hover:shadow-lg group">
+        <Card key={product.id} className="overflow-hidden transition-all hover:shadow-lg group flex flex-col justify-between">
           {
             product && openProduct && (
               <ProductQuickView open={openProduct} onOpenChange={setOpenProduct} product={product} />
@@ -51,7 +59,7 @@ export const ProductGrid = ({ products, viewMode, searchTerm = "" }: ProductGrid
               <Button variant="secondary" size="sm" className="mx-1" onClick={()=> setOpenProduct(true)}>
                 Quick View
               </Button>
-              <Button variant="secondary" size="sm" className="mx-1">
+              <Button variant="secondary" size="sm" className="mx-1" onClick={()=> addProduct(product)}>
                 Add to Cart
               </Button>
             </div>
@@ -95,7 +103,13 @@ export const ProductGrid = ({ products, viewMode, searchTerm = "" }: ProductGrid
               <span className="mx-2">•</span>
               <span>Ships in {product.shippingDays} days</span>
             </div>
+            
+            
           </CardContent>
+          <CardFooter className="w-full">
+            <Button className="w-full hover:bg-blue-400" onClick={()=>router.push(`/products/${product.id}`)}>View product</Button>
+          </CardFooter>
+          
         </Card>
       ))}
     </div>

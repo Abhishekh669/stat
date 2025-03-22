@@ -45,18 +45,10 @@ export const CollectionSectionPage = () => {
           </div>
         </div>
 
-        <div className="absolute right-0 bottom-0 w-1/3 h-full hidden lg:block">
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent to-primary/5"></div>
-          <Image
-          fill
-            src="/placeholder.svg?height=400&width=600&text=Collections"
-            alt="Collections"
-            className="w-full h-full object-cover opacity-20"
-          />
-        </div>
+       
       </div>
 
-      <div className="relative max-w-md mt-4 ml-4">
+      <div className="relative max-w-md mt-4 ml-4 lg:ml-24">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
           placeholder="Search collections..."

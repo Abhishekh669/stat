@@ -4,10 +4,19 @@ import React, { useState } from "react";
 import { Menu, ShoppingBag } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "../ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from "../ui/sheet";
 import { cn } from "@/lib/utils";
+import { useStatStore } from "@/store/use-stat-store";
+import Hint from "../Hint";
 
 function NavBar() {
+  const { cartsProduct } = useStatStore();
   const pathname = usePathname();
   const routes = [
     { title: "Home", url: "/" },
@@ -24,7 +33,10 @@ function NavBar() {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <Link href="/" className="font-serif text-2xl font-bold text-primary relative overflow-hidden group">
+          <Link
+            href="/"
+            className="font-serif text-2xl font-bold text-primary relative overflow-hidden group"
+          >
             <span className="inline-block transition-transform duration-300 group-hover:-translate-y-full">
               Writefully
             </span>
@@ -62,21 +74,30 @@ function NavBar() {
             </Link>
           ))}
           <div className="flex items-center gap-4">
-            <Link href="/#" className="text-sm font-medium transition-colors hover:text-primary hidden md:block">
+            <Link
+              href="/#"
+              className="text-sm font-medium transition-colors hover:text-primary hidden md:block"
+            >
               Account
             </Link>
-            <Link href="/#" className="relative group">
-              <ShoppingBag className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-              <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] text-white transition-transform duration-300 group-hover:scale-125">
-                0
-              </span>
-            </Link>
+            <Hint label="your carts products" side="right">
+              <Link href="/carts" className="relative group">
+                <ShoppingBag className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] text-white transition-transform duration-300 group-hover:scale-125">
+                  {cartsProduct.length}
+                </span>
+              </Link>
+            </Hint>
           </div>
         </nav>
       </div>
 
       {/* Mobile Menu Button */}
-      <Button variant={"outline"} className="border-none md:hidden" onClick={() => setOpen(true)}>
+      <Button
+        variant={"outline"}
+        className="border-none md:hidden"
+        onClick={() => setOpen(true)}
+      >
         <Menu />
       </Button>
 
@@ -108,7 +129,10 @@ function NavBar() {
               </Link>
             ))}
             <div className="flex items-center gap-4">
-              <Link href="/#" className="text-sm font-medium transition-colors hover:text-primary">
+              <Link
+                href="/#"
+                className="text-sm font-medium transition-colors hover:text-primary"
+              >
                 Account
               </Link>
             </div>

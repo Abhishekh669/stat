@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useStatStore } from "@/store/use-stat-store";
+import { bestSeller } from "@/lib/data";
+import { ProductData } from "@/types/type";
 interface BestSellerProps {
   productsInView: boolean;
   productsRef: any;
@@ -17,44 +20,11 @@ function BestSeller({
   openQuickView,
 }: BestSellerProps) {
   const router = useRouter();
-  const bestSellers = [
-    {
-      id: 1,
-      name: "Premium Leather Journal",
-      price: "$45.00",
-      image: "/images/most-viewed/leather-notebook.webp",
-      category: "Notebooks",
-      description:
-        "Handcrafted premium leather journal with 240 pages of acid-free paper. Perfect for journaling, sketching, or note-taking.",
-    },
-    {
-      id: 2,
-      name: "Fountain Pen Set",
-      price: "$89.00",
-      image: "/images/products/fountain-pen.webp",
-      category: "Pens & Pencils",
-      description:
-        "Elegant fountain pen set with interchangeable nibs and a premium ink cartridge. Comes in a beautiful gift box.",
-    },
-    {
-      id: 3,
-      name: "Weekly Planner",
-      price: "$32.00",
-      image: "/images/products/academic.jpeg",
-      category: "Planners",
-      description:
-        "Comprehensive weekly planner with goal-setting sections, habit trackers, and monthly overviews. Stay organized in style.",
-    },
-    {
-      id: 4,
-      name: "Desk Organizer",
-      price: "$58.00",
-      image: "/images/products/desk-org.jpg",
-      category: "Desk Accessories",
-      description:
-        "Sleek wooden desk organizer with multiple compartments for pens, cards, and small accessories. Keeps your workspace tidy.",
-    },
-  ];
+  const {addToCart} = useStatStore()
+  const handleAddToCart = (product : ProductData) =>{
+    addToCart(product)
+  }
+
   return (
     <section className="py-16 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-offwhite-subtle via-offwhite-villa to-offwhite-subtle pointer-events-none"></div>
@@ -76,7 +46,7 @@ function BestSeller({
           ref={productsRef}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
         >
-          {bestSellers.map((product, index) => (
+          {bestSeller.map((product, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -86,7 +56,7 @@ function BestSeller({
               <Card className="overflow-hidden transition-all hover:shadow-lg group h-full bg-offwhite-rose">
                 <div className="aspect-square relative">
                   <Image
-                    src={product.image || "/placeholder.svg"}
+                    src={product.imageUrl || "/placeholder.svg"}
                     alt={product.name}
                     className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                     fill
@@ -104,6 +74,8 @@ function BestSeller({
                       variant="secondary"
                       size="sm"
                       className="mx-2 scale-90 opacity-0 transition-all duration-300 delay-75 group-hover:scale-100 group-hover:opacity-100"
+                      onClick={() => handleAddToCart(product)}
+
                     >
                       Add to Cart
                     </Button>

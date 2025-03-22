@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Writefully Yours',
   description: 'A next generation stationary',
+  icons: {
+    icon: '/app-icon.ico', // or '/images/app-icon.png'
+  },
 }
 
 export default function RootLayout({
@@ -18,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-      <nav className="sticky top-0 z-50">
+        <nav className="sticky top-0 z-50">
           <NavBar />
         </nav>
         {children}
