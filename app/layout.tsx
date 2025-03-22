@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Writefully Yours',
   description: 'A next generation stationary',
   icons: {
-    icon: 'favicon.ico', // or '/images/app-icon.png'
+    icon: 'favicon.ico', 
   },
 }
 

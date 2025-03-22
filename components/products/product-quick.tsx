@@ -6,6 +6,7 @@ import { Box, Minus, Plus, Shield, X } from "lucide-react"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 interface ProductQuickViewProps {
   open: boolean
@@ -32,6 +33,7 @@ interface ProductQuickViewProps {
 }
 
 export function ProductQuickView({ open, onOpenChange, product }: ProductQuickViewProps) {
+  const router = useRouter()
   const [quantity, setQuantity] = useState(1)
   const [selectedImage, setSelectedImage] = useState(0)
   const [addedToCart, setAddedToCart] = useState(false)
@@ -44,7 +46,6 @@ export function ProductQuickView({ open, onOpenChange, product }: ProductQuickVi
     setTimeout(() => setAddedToCart(false), 2000)
   }
 
-  // Mock multiple product images
   const productImages = [
     product.imageUrl,
     "/placeholder.svg?height=300&width=300&text=View 2",
@@ -143,7 +144,7 @@ export function ProductQuickView({ open, onOpenChange, product }: ProductQuickVi
                   <span className="absolute inset-0 bg-primary transition-transform duration-300 group-hover:translate-y-full"></span>
                   <span className="absolute inset-0 bg-green-600 translate-y-full transition-transform duration-300 group-hover:translate-y-0"></span>
                 </Button>
-                <Button variant="outline" className="flex-1 group relative overflow-hidden">
+                <Button variant="outline" className="flex-1 group relative overflow-hidden" onClick={()=>router.push(`/products/${product.id}`)}>
                   <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
                     View Full Details
                   </span>

@@ -82,7 +82,7 @@ export default function AboutUsPage() {
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
                 fill
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/images/products/stat-pic.webp"
                   alt="Writefully Yours founder in the store"
                   className="object-cover w-full h-full"
                 />
@@ -131,7 +131,7 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        {/* Our Store */}
+      
         <section className="py-16 bg-gray-50">
           <div className="container px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -167,7 +167,7 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        {/* Call to Action */}
+      
         <section className="py-16 bg-primary text-primary-foreground">
           <div className="container px-4 text-center">
             <h2 className="text-3xl font-serif font-bold mb-4">Ready to Explore?</h2>
